@@ -137,7 +137,7 @@ interface LanguageProviderProps {
   children: ReactNode;
 }
 
-export function LanguageProvider({ children }: LanguageProviderProps): JSX.Element {
+export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguage] = useState<Language>('es');
 
   const t = (key: string, value?: any): string => {

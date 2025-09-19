@@ -2,10 +2,10 @@ import React from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { RouteProvider } from './contexts/RouteContext';
-import { NeoBrutalistHeader } from './components/NeoBrutalistHeader';
-import { NeoBrutalistHomePage } from './components/NeoBrutalistHomePage';
-import { NeoBrutalistProjectDetailPage } from './components/NeoBrutalistProjectDetailPage';
-import { NeoBrutalistBackground } from './components/NeoBrutalistBackground';
+import { Header } from './components/Header';
+import { HomePage } from './components/HomePage';
+import { ProjectDetailPage } from './components/ProjectDetailPage';
+import { Background } from './components/Background';
 
 import { useRoute } from './contexts/RouteContext';
 
@@ -15,15 +15,15 @@ function AppContent(): JSX.Element {
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: '#ffffff' }}>
       {/* NeoBrutalist background */}
-      <NeoBrutalistBackground />
+      <Background />
       
       {/* NeoBrutalist header */}
-      <NeoBrutalistHeader />
+      <Header />
 
       {/* Route-based content */}
       <div className="relative z-10">
-        {currentRoute === 'home' && <NeoBrutalistHomePage />}
-        {currentRoute === 'project-detail' && <NeoBrutalistProjectDetailPage />}
+        {currentRoute === 'home' && <HomePage />}
+        {currentRoute === 'project-detail' && <ProjectDetailPage />}
       </div>
     </div>
   );

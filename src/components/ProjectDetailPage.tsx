@@ -1,4 +1,4 @@
-// src/components/NeoBrutalistProjectDetailPage.tsx
+// src/components/ProjectDetailPage.tsx
 import React from 'react';
 import { 
   ArrowLeft, ExternalLink, Github, Eye, Clock, User, Star, Zap, Target, TrendingUp 
@@ -53,7 +53,7 @@ const cardColors = [
   'bg-yellow-400', 'bg-green-400', 'bg-blue-400', 'bg-red-400', 'bg-purple-500', 'bg-orange-400'
 ];
 
-export function NeoBrutalistProjectDetailPage() {
+export function ProjectDetailPage() {
   const { language } = useLanguage();
   const { selectedProject, navigateToHome } = useRoute();
 

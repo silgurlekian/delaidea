@@ -40,7 +40,7 @@ const cardColors = [
   'bg-orange-400'
 ];
 
-export function NeoBrutalistProjects() {
+export function Projects() {
   const { t, language } = useLanguage();
   const { navigateToProject } = useRoute();
   const [isVisible, setIsVisible] = useState<boolean>(false);

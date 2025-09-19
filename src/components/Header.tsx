@@ -4,7 +4,7 @@ import { Globe, Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useRoute } from '../contexts/RouteContext';
 
-export function NeoBrutalistHeader() {
+export function Header() {
   const { language, setLanguage, t } = useLanguage();
   const { currentRoute, navigateToHome } = useRoute();
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
