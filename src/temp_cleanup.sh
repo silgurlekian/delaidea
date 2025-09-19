@@ -10,12 +10,7 @@ rm -f /components/ProjectCard-1.tsx
 rm -f /components/ProjectDetail-1.tsx
 
 # Componentes no utilizados actualmente
-rm -f /components/AsymmetricContact.tsx
-rm -f /components/AsymmetricFloatingElements.tsx
-rm -f /components/AsymmetricHeader.tsx
-rm -f /components/AsymmetricHero.tsx
-rm -f /components/AsymmetricProjects.tsx
-rm -f /components/BackgroundSparkles.tsx
+
 rm -f /components/Contact.tsx
 rm -f /components/Header.tsx
 rm -f /components/Hero.tsx
