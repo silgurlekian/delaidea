@@ -244,7 +244,6 @@
   }
 
   img, svg, video, canvas, audio, iframe, embed, object {
-    vertical-align: middle;
     display: block;
   }
 
@@ -2973,7 +2972,6 @@ html {
 
 .glass-card {
   background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-light);
 }
@@ -3010,7 +3008,6 @@ html {
 }
 
 .bento-card {
-  -webkit-backdrop-filter: blur(20px);
   background: #ffffffe6;
   border: 1px solid #fff3;
   box-shadow: 0 8px 32px #1f26875e;
@@ -3038,7 +3035,6 @@ html {
 }
 
 .glass-card-strong {
-  -webkit-backdrop-filter: blur(20px);
   background: #fffffff2;
   border: 1px solid #ffffff4d;
   box-shadow: 0 8px 32px #1f26871a, inset 0 1px #ffffff80;
