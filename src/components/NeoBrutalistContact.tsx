@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { Mail, MapPin, Phone, Linkedin, Github, Twitter, ExternalLink, Copy, Check, Zap, Star, Heart } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-export function NeoBrutalistContact(): JSX.Element {
+export function NeoBrutalistContact() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [copiedItem, setCopiedItem] = useState<string>('');

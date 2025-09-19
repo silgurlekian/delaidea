@@ -3,7 +3,7 @@ import { ArrowDownRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useLanguage } from '../contexts/LanguageContext';
 
-export function NeoBrutalistHero(): JSX.Element {
+export function NeoBrutalistHero() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const heroRef = useRef<HTMLElement>(null);

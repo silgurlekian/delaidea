@@ -3,9 +3,8 @@ import { Button } from './ui/button';
 import { Globe, Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useRoute } from '../contexts/RouteContext';
-import logoImage from 'figma:asset/41425c4b14edf5dea41e560acb3bdce17ac7705a.png';
 
-export function NeoBrutalistHeader(): JSX.Element {
+export function NeoBrutalistHeader() {
   const { language, setLanguage, t } = useLanguage();
   const { currentRoute, navigateToHome } = useRoute();
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -35,7 +34,7 @@ export function NeoBrutalistHeader(): JSX.Element {
   return (
     <header className="bg-white">
       <div className="flex items-center justify-between px-6 lg:px-8 py-4">
-        
+
         {/* Logo */}
         <button
           onClick={() => {
@@ -48,11 +47,7 @@ export function NeoBrutalistHeader(): JSX.Element {
           className="flex items-center space-x-3 text-black p-2"
           aria-label={language === 'es' ? 'Ir al inicio' : 'Go to home'}
         >
-          <img 
-            src={logoImage} 
-            alt="Portfolio Logo" 
-            className="h-12 w-auto"
-          />
+          <img src="/images/logo_dli.png" alt="Portfolio Logo" className="h-12 w-auto" />
         </button>
 
         {/* Desktop Navigation */}
@@ -81,7 +76,7 @@ export function NeoBrutalistHeader(): JSX.Element {
 
         {/* Controls */}
         <div className="flex items-center space-x-2">
-          
+
           {/* Language Toggle */}
           <Button
             variant="ghost"
@@ -110,7 +105,7 @@ export function NeoBrutalistHeader(): JSX.Element {
           </Button>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       {mobileMenuOpen && currentRoute === 'home' && (
         <div className="md:hidden bg-black text-white p-6">
@@ -133,7 +128,7 @@ export function NeoBrutalistHeader(): JSX.Element {
             >
               {t('nav.contact')}
             </button>
-            
+
             <div className="border-t-2 border-gray-600 pt-4 mt-4">
               <Button
                 variant="ghost"

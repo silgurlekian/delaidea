@@ -3,7 +3,7 @@ import { NeoBrutalistHero } from './NeoBrutalistHero';
 import { NeoBrutalistProjects } from './NeoBrutalistProjects';
 import { NeoBrutalistContact } from './NeoBrutalistContact';
 
-export function NeoBrutalistHomePage(): JSX.Element {
+export function NeoBrutalistHomePage() {
   return (
     <main className="relative">
       {/* Hero Section */}

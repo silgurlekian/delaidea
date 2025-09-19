@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export function NeoBrutalistBackground(): JSX.Element {
+export function NeoBrutalistBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
