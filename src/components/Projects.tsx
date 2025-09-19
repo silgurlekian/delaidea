@@ -114,12 +114,6 @@ export function Projects() {
                 </div>
               </h2>
             </div>
-
-            <div className="bg-black text-white p-6 transform rotate-1 max-w-md">
-              <p className="font-bold">
-                {t('projects.description')}
-              </p>
-            </div>
           </div>
         </div>
 
