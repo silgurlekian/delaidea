@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
-import { Mail, MapPin, Phone, Linkedin, Github, Twitter, ExternalLink, Copy, Check, Zap, Star, Heart } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, Instagram, ExternalLink, Copy, Check, Zap, Star, Heart } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function Contact() {
@@ -73,25 +73,17 @@ export function Contact() {
       id: 'linkedin',
       icon: Linkedin,
       label: 'LINKEDIN',
-      href: 'https://linkedin.com/in/username',
+      href: 'https://linkedin.com/company/delaidea/',
       color: 'bg-blue-500',
       hoverColor: 'hover:bg-yellow-400'
     },
     {
-      id: 'github',
-      icon: Github,
-      label: 'GITHUB',
-      href: 'https://github.com/username',
+      id: 'instagram',
+      icon: Instagram,
+      label: 'INSTAGRAM',
+      href: 'https://www.instagram.com/delaideacom/',
       color: 'bg-black',
       hoverColor: 'hover:bg-green-400'
-    },
-    {
-      id: 'twitter',
-      icon: Twitter,
-      label: 'TWITTER',
-      href: 'https://twitter.com/username',
-      color: 'bg-cyan-400',
-      hoverColor: 'hover:bg-red-500'
     }
   ];
 
