@@ -23,7 +23,6 @@ export function Background() {
     <div ref={containerRef} className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       
       {/* Geometric Shapes */}
-      <div className="neo-floating-element absolute top-20 left-10 w-16 h-16 bg-yellow-400 border-4 border-black transform rotate-45 opacity-60" />
       
       <div className="neo-floating-element absolute top-40 right-20 w-12 h-12 bg-red-500 opacity-50" 
            style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
