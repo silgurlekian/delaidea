@@ -89,7 +89,7 @@ export function Hero() {
                     <div className="text-sm font-bold text-black uppercase">{t('hero.stats.projects')}</div>
                   </div>
                   <div className="bg-purple-500 p-4 transform -rotate-1">
-                    <div className="text-3xl font-black text-white">8+</div>
+                    <div className="text-3xl font-black text-white">10+</div>
                     <div className="text-sm font-bold text-white uppercase">{t('hero.stats.years')}</div>
                   </div>
                 </div>
