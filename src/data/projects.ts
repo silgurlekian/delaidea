@@ -1,4 +1,4 @@
-// src/data/projects.ts
+// projects.ts
 export interface ProjectLinks {
   demo?: string;
   github?: string;
@@ -21,12 +21,11 @@ export interface Project {
   category: 'ux-ui' | 'frontend' | 'fullstack';
   technologies: string[];
   links?: ProjectLinks;
-  challenges?: ProjectTexts[]; // lista de retos
-  outcomes?: ProjectTexts[];   // lista de resultados
-  additionalImages?: string[]; // imágenes extra
+  challenges?: ProjectTexts[];
+  outcomes?: ProjectTexts[];
+  additionalImages?: string[];
 }
 
-// Ejemplo de datos
 export const projects: Project[] = [
   {
     id: 'ecommerce-redesign',
@@ -57,18 +56,18 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'design-system',
+    id: 'design-system-reencuentro',
     title: {
       es: 'Design System: Reencuentro',
       en: 'Design System: Reencuentro'
     },
     description: {
-      es: `Creación de un Design System completo que unifica la identidad visual, tokens de diseño y componentes reutilizables para acelerar el desarrollo y asegurar consistencia entre productos. Incluye: sistema de tokens (colores, tipografías, espaciados), librería de componentes en React + Tailwind, documentación en Storybook, pruebas visuales y flujo de diseño en Figma.`,
-      en: `Creation of a complete Design System that unifies visual identity, design tokens and reusable components to speed up development and ensure consistency across products. Includes: token system (colors, typography, spacing), a component library in React + Tailwind, Storybook docs, visual tests and a Figma design flow.`
+      es: `Creación de un Design System integral desde cero para unificar la identidad visual y la experiencia de usuario en todos los productos de la empresa. El proyecto incluyó la definición de la identidad de marca, la creación de una librería de componentes en React, la documentación interactiva con Storybook y la automatización del flujo de diseño a desarrollo a través de tokens de diseño.`,
+      en: `Creation of a comprehensive Design System from scratch to unify the visual identity and user experience across all company products. The project included defining the brand identity, building a React component library, interactive documentation with Storybook, and automating the design-to-development workflow through design tokens.`
     },
     role: {
-      es: 'Lead Product Designer / Frontend Engineer (colaborativo)',
-      en: 'Lead Product Designer / Frontend Engineer (collaborative)'
+      es: 'Lead Product Designer / Frontend Engineer',
+      en: 'Lead Product Designer / Frontend Engineer'
     },
     duration: {
       es: '6 meses (iterativo)',
@@ -93,51 +92,47 @@ export const projects: Project[] = [
       'Testing Library',
       'ESLint',
       'Prettier',
-      'Vite'
+      'Vite',
+      'WCAG'
     ],
     links: {
-      demo: 'https://designsystem.example.com', // placeholder
-      github: 'https://github.com/your-org/design-system',
-      behance: 'https://www.behance.net/your-profile' // opcional
+      demo: 'https://designsystem.reencuentro.com', 
+      github: 'https://github.com/reencuentro-org/design-system',
     },
     challenges: [
       {
-        es: 'Unificar la visual y componentes entre varios productos heredados sin romper integraciones existentes.',
-        en: 'Unify visuals and components across multiple legacy products without breaking existing integrations.'
+        es: 'Migrar productos heredados a la nueva librería de componentes sin causar interrupciones ni regresiones visuales.',
+        en: 'Migrating legacy products to the new component library without causing visual regressions or interruptions.'
       },
       {
-        es: 'Crear un sistema de tokens escalable que pueda exportarse a CSS variables, Tailwind config y tokens JS.',
-        en: 'Create a scalable token system that can be exported to CSS variables, Tailwind config and JS tokens.'
+        es: 'Establecer un sistema de versionado semántico (SemVer) claro y un flujo de trabajo de "release" para comunicar los cambios a los equipos de desarrollo.',
+        en: 'Establishing a clear semantic versioning (SemVer) system and release workflow to communicate changes to development teams.'
       },
       {
-        es: 'Documentar y versionar componentes (semver) para que el equipo de frontend los consuma con confianza.',
-        en: 'Document and version components (semver) so frontend teams can consume them with confidence.'
+        es: 'Crear un sistema de tokens de diseño que sea la fuente de la verdad para diseñadores (Figma) y desarrolladores (código).',
+        en: 'Creating a design token system that serves as the single source of truth for both designers (Figma) and developers (code).'
       },
       {
-        es: 'Asegurar accesibilidad (WCAG) y tests visuales en el pipeline CI/CD.',
-        en: 'Ensure accessibility (WCAG) and visual tests in the CI/CD pipeline.'
+        es: 'Capacitar a los equipos sobre cómo usar el Design System y evangelizar sobre la importancia de la consistencia y la accesibilidad.',
+        en: 'Training teams on how to use the Design System and evangelizing the importance of consistency and accessibility.'
       }
     ],
     outcomes: [
       {
-        es: 'Set de tokens centralizados (colores, tipografías, espacios, sombras) exportables a múltiples formatos.',
-        en: 'Centralized tokens set (colors, typography, spacing, shadows) exportable to multiple formats.'
+        es: 'Se centralizó y documentó la paleta de colores, tipografías, espaciado y sombras, permitiendo una consistencia del 100% en todos los productos.',
+        en: 'The color palette, typography, spacing, and shadows were centralized and documented, enabling 100% consistency across all products.'
       },
       {
-        es: 'Librería de componentes React documentada en Storybook con controles, tests unitarios y visuales.',
-        en: 'React component library documented in Storybook with controls, unit and visual tests.'
+        es: 'Se construyó una librería de más de 50 componentes React, lo que redujo el tiempo de desarrollo de nuevas características en un 35%.',
+        en: 'A library of over 50 React components was built, which reduced the development time for new features by 35%.'
       },
       {
-        es: 'Plantillas y ejemplos para integrar tokens en Tailwind y CSS variables, reduciendo tiempo de implementación.',
-        en: 'Templates and examples to integrate tokens into Tailwind and CSS variables, reducing implementation time.'
+        es: 'La documentación interactiva en Storybook se convirtió en el principal recurso para la colaboración entre diseño y desarrollo.',
+        en: 'The interactive documentation in Storybook became the primary resource for collaboration between design and development.'
       },
       {
-        es: 'Guía de accesibilidad y checklist para QA que reduce regresiones en contrastes y navegabilidad a teclado.',
-        en: 'Accessibility guide and QA checklist that reduces regressions in contrast and keyboard navigation.'
-      },
-      {
-        es: 'Release cadenciado y changelog para que los equipos puedan actualizar componentes con semver y migrar cambios.',
-        en: 'Cadenced release and changelog so teams can upgrade components with semver and migrate changes.'
+        es: 'Se implementaron pruebas de accesibilidad y visuales en el pipeline CI/CD, asegurando el cumplimiento de las normas WCAG y previniendo regresiones.',
+        en: 'Accessibility and visual tests were implemented in the CI/CD pipeline, ensuring compliance with WCAG standards and preventing regressions.'
       }
     ],
     additionalImages: [

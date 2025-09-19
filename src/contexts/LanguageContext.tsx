@@ -18,12 +18,19 @@ const translations: Record<Language, Translations> = {
     'nav.home': 'Inicio',
     'nav.projects': 'Proyectos',
     'nav.contact': 'Contacto',
-    
+
     // Hero Section
     'hero.title': 'DISEÑO Y CÓDIGO. Experiencias digitales',
-    'hero.subtitle': 'Frontend Developer especializado en crear interfaces que IMPACTAN. React, TypeScript y diseño UX/UI que conecta con las personas.',
+    'hero.subtitle': 'Diseñadora UX y web especializada en la creatividad, puntualidad y entrega. Orientada a brindar soluciones reales y completas a las distintas necesidades de comunicación en los diversos espacios digitales.',
     'hero.cta': 'VER PROYECTOS',
-    
+    'hero.tech.react': 'REACT',
+    'hero.tech.typescript': 'TYPESCRIPT',
+    'hero.tech.node': 'NODE',
+    'hero.tech.figma': 'FIGMA',
+    'hero.tech.uiux': 'UX/UI',
+    'hero.tech.design': 'DISEÑO',
+    'hero.tech.web': 'DESARROLLO WEB',
+
     // Projects Section
     'projects.title': 'Mis Proyectos',
     'projects.subtitle': 'Una selección de mis trabajos más recientes en UX/UI y desarrollo frontend',
@@ -56,7 +63,7 @@ const translations: Record<Language, Translations> = {
     'projects.empty.title': 'No se encontraron proyectos',
     'projects.empty.description': 'No hay proyectos disponibles para la categoría seleccionada.',
     'projects.empty.viewAll': 'Ver todos los proyectos',
-    
+
     // Contact Section
     'contact.title': 'Contacto',
     'contact.subtitle': 'Colaboremos en tu próximo proyecto',
@@ -64,7 +71,7 @@ const translations: Record<Language, Translations> = {
     'contact.phone': 'Teléfono',
     'contact.location': 'Ubicación',
     'contact.social': 'Redes sociales',
-    
+
     // Accessibility
     'aria.languageSelector': 'Selector de idioma',
     'aria.openProjectDetails': 'Abrir detalles del proyecto',
@@ -76,12 +83,19 @@ const translations: Record<Language, Translations> = {
     'nav.home': 'Home',
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
-    
+
     // Hero Section
     'hero.title': 'DESIGN & CODE. Digital experiences',
-    'hero.subtitle': 'Frontend Developer specialized in creating interfaces that IMPACT. React, TypeScript and UX/UI design that connects with people.',
+    'hero.subtitle': 'UX and web designer specializing in creativity, punctuality, and delivery. Focused on providing real and comprehensive solutions to different communication needs in various digital spaces.',
     'hero.cta': 'VIEW PROJECTS',
-    
+    'hero.tech.react': 'REACT',
+    'hero.tech.typescript': 'TYPESCRIPT',
+    'hero.tech.node': 'NODE',
+    'hero.tech.figma': 'FIGMA',
+    'hero.tech.uiux': 'UX/UI',
+    'hero.tech.design': 'DESIGN',
+    'hero.tech.web': 'WEB DEVELOPMENT',
+
     // Projects Section
     'projects.title': 'My Projects',
     'projects.subtitle': 'A selection of my recent work in UX/UI design and frontend development',
@@ -114,7 +128,7 @@ const translations: Record<Language, Translations> = {
     'projects.empty.title': 'No projects found',
     'projects.empty.description': 'There are no projects available for the selected category.',
     'projects.empty.viewAll': 'View all projects',
-    
+
     // Contact Section
     'contact.title': 'Contact',
     'contact.subtitle': "Let's collaborate on your next project",
@@ -122,7 +136,7 @@ const translations: Record<Language, Translations> = {
     'contact.phone': 'Phone',
     'contact.location': 'Location',
     'contact.social': 'Social media',
-    
+
     // Accessibility
     'aria.languageSelector': 'Language selector',
     'aria.openProjectDetails': 'Open project details',
@@ -145,12 +159,12 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     if (value && typeof value === 'object' && value[language]) {
       return value[language];
     }
-    
+
     // If value is a simple string, return it
     if (typeof value === 'string') {
       return value;
     }
-    
+
     // Otherwise, use the translation key from the translations object
     return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
