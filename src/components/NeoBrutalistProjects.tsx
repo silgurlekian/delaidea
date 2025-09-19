@@ -67,13 +67,13 @@ export function NeoBrutalistProjects() {
     return () => observer.disconnect();
   }, []);
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.category === filter);
-  
+
   const displayedProjects = filteredProjects.slice(0, visibleProjects);
   const hasMoreProjects = filteredProjects.length > visibleProjects;
-  
+
   const loadMoreProjects = () => {
     setVisibleProjects(prev => prev + 6);
   };
@@ -86,12 +86,11 @@ export function NeoBrutalistProjects() {
   return (
     <section id="projects" className="pt-32 pb-20 px-6 lg:px-8 relative bg-gray-100">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Header */}
-        <div className={`mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          
+        <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
+
           {/* Title Section */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12">
             <div>
@@ -101,7 +100,7 @@ export function NeoBrutalistProjects() {
                 </div>
                 <span className="font-black uppercase tracking-[0.2em] text-sm">{t('projects.sectionSubtitle')}</span>
               </div>
-              
+
               <h2 className="space-y-2">
                 <div className="text-6xl md:text-8xl font-black leading-none">
                   <span className="text-black bg-yellow-400 px-4 py-2 transform -rotate-1 inline-block">
@@ -125,9 +124,8 @@ export function NeoBrutalistProjects() {
         </div>
 
         {/* Filter Tabs */}
-        <div className={`mb-16 transition-all duration-1000 delay-200 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div className={`mb-16 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
           <div className="flex flex-wrap gap-4">
             {[
               { key: 'all', label: t('projects.filter.all'), color: 'bg-black text-white' },
@@ -138,11 +136,10 @@ export function NeoBrutalistProjects() {
               <button
                 key={tab.key}
                 onClick={() => setFilter(tab.key)}
-                className={`px-6 py-3 font-black uppercase text-sm border-4 border-black transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${
-                  filter === tab.key
-                    ? tab.color
-                    : 'bg-white text-black hover:bg-gray-200'
-                }`}
+                className={`px-6 py-3 font-black uppercase text-sm border-4 border-black transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${filter === tab.key
+                  ? tab.color
+                  : 'bg-white text-black hover:bg-gray-200'
+                  }`}
               >
                 {tab.label}
               </button>
@@ -155,16 +152,15 @@ export function NeoBrutalistProjects() {
           {displayedProjects.map((project, index) => {
             const cardColor = cardColors[index % cardColors.length];
             const categoryStyle = categoryColors[project.category];
-            
+
             return (
               <div
                 key={project.id}
-                className={`transition-all duration-1000 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+                className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
                 style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
-                <article 
+                <article
                   className="bg-white border-8 border-black p-0 transition-all duration-300 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group cursor-pointer"
                   onClick={() => navigateToProject(project)}
                 >
@@ -176,7 +172,7 @@ export function NeoBrutalistProjects() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                     />
-                    
+
                     {/* Category Badge */}
                     <div className="absolute top-4 left-4">
                       <div className={`${categoryStyle.bg} ${categoryStyle.text} px-3 py-1 font-black text-xs uppercase border-2 border-black`}>
@@ -189,7 +185,7 @@ export function NeoBrutalistProjects() {
                       <Button
                         size="sm"
                         className="w-8 h-8 p-0 bg-yellow-400 hover:bg-green-400 text-black border-2 border-black"
-                        onClick={(e) => {
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                           e.stopPropagation();
                           navigateToProject(project);
                         }}
@@ -199,7 +195,7 @@ export function NeoBrutalistProjects() {
                       <Button
                         size="sm"
                         className="w-8 h-8 p-0 bg-red-400 hover:bg-blue-400 text-black border-2 border-black"
-                        onClick={(e) => e.stopPropagation()}
+                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => e.stopPropagation()}
                       >
                         <ExternalLink className="w-3 h-3" />
                       </Button>
@@ -236,7 +232,7 @@ export function NeoBrutalistProjects() {
                       onClick={() => navigateToProject(project)}
                       className="w-full bg-black hover:bg-red-500 text-white font-black uppercase py-3 border-4 border-black hover:border-red-500 transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
                     >
-{t('projects.viewProject')}
+                      {t('projects.viewProject')}
                       <ArrowUpRight className="w-4 h-4 ml-2" />
                     </Button>
                   </div>
@@ -248,16 +244,15 @@ export function NeoBrutalistProjects() {
 
         {/* Load More Section */}
         {hasMoreProjects && (
-          <div className={`text-center mt-16 transition-all duration-1000 delay-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
+          <div className={`text-center mt-16 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
             <div className="flex items-center justify-center gap-8">
               <div className="w-16 h-1 bg-black" />
-              <Button 
+              <Button
                 onClick={loadMoreProjects}
                 className="bg-green-400 hover:bg-yellow-400 text-black font-black uppercase px-8 py-4 border-4 border-black transition-all duration-300 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
               >
-{t('projects.loadMore')}
+                {t('projects.loadMore')}
                 <Zap className="w-5 h-5 ml-2" />
               </Button>
               <div className="w-16 h-1 bg-black" />
