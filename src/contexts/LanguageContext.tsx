@@ -65,11 +65,13 @@ const translations: Record<Language, Translations> = {
 
     // Contact Section
     'contact.title': 'Contacto',
-    'contact.subtitle': 'Colaboremos en tu próximo proyecto',
+    'contact.subtitle': '¿TRABAJAMOS JUNTOS?',
     'contact.email': 'Email',
-    'contact.phone': 'Teléfono',
     'contact.location': 'Ubicación',
+    'contact.info': 'Información',
     'contact.social': 'Redes sociales',
+
+    'footer.text': '© 2025 PORTFOLIO. HECHO CON ❤️ Y MUCHO CAFÉ.',
 
     // Accessibility
     'aria.languageSelector': 'Selector de idioma',
@@ -129,11 +131,13 @@ const translations: Record<Language, Translations> = {
 
     // Contact Section
     'contact.title': 'Contact',
-    'contact.subtitle': "Let's collaborate on your next project",
+    'contact.subtitle': "SHALL WE WORK TOGETHER?",
     'contact.email': 'Email',
-    'contact.phone': 'Phone',
     'contact.location': 'Location',
+    'contact.info': 'Information',
     'contact.social': 'Social media',
+
+    'footer.text': '© 2025 PORTFOLIO. MADE WITH ❤️ AND LOTS OF COFFEE.',
 
     // Accessibility
     'aria.languageSelector': 'Language selector',
