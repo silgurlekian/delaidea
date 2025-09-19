@@ -84,7 +84,7 @@ export function Projects() {
   }, [filter]);
 
   return (
-    <section id="projects" className="pt-32 pb-20 px-6 lg:px-8 relative bg-gray-100">
+    <section id="projects" className="pt-16 pt-32 pb-20 px-6 lg:px-8 relative bg-gray-100">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
