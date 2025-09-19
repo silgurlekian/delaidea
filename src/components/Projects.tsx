@@ -120,7 +120,7 @@ export function Projects() {
         {/* Filter Tabs */}
         <div className={`mb-16 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center">
             {[
               { key: 'all', label: t('projects.filter.all'), color: 'bg-black text-white' },
               { key: 'ux-ui', label: t('projects.filter.uxui'), color: 'bg-purple-500 text-white' },
@@ -142,7 +142,7 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {displayedProjects.map((project, index) => {
             const cardColor = cardColors[index % cardColors.length];
             const categoryStyle = categoryColors[project.category];
@@ -150,86 +150,63 @@ export function Projects() {
             return (
               <div
                 key={project.id}
-                className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
+                className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
                 <article
-                  className="bg-white border-8 border-black p-0 transition-all duration-300 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group cursor-pointer"
+                  className="bg-white border-8 border-black p-0 transition-all duration-300 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] group cursor-pointer flex flex-col h-full"
                   onClick={() => navigateToProject(project)}
                 >
-                  {/* Image Container */}
-                  <div className="relative h-48 overflow-hidden">
+
+                  {/* Imagen */}
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
                     <ImageWithFallback
                       src={projectImages[project.id]}
                       alt={t('title', project.title)}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading="lazy"
                     />
-
-                    {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
-                      <div className={`${categoryStyle.bg} ${categoryStyle.text} px-3 py-1 font-black text-xs uppercase border-2 border-black`}>
-                        {categoryLabels[project.category]}
-                      </div>
-                    </div>
-
-                    {/* Quick Actions */}
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 flex gap-2">
-                      <Button
-                        size="sm"
-                        className="w-8 h-8 p-0 bg-yellow-400 hover:bg-green-400 text-black border-2 border-black"
-                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                          e.stopPropagation();
-                          navigateToProject(project);
-                        }}
-                      >
-                        <Eye className="w-3 h-3" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="w-8 h-8 p-0 bg-red-400 hover:bg-blue-400 text-black border-2 border-black"
-                        onClick={(e: React.MouseEvent<HTMLButtonElement>) => e.stopPropagation()}
-                      >
-                        <ExternalLink className="w-3 h-3" />
-                      </Button>
-                    </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6 space-y-4">
-                    <div>
+                  {/* Contenido */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="mb-4">
                       <h3 className="font-black text-xl mb-2 group-hover:text-red-500 transition-colors duration-300 uppercase">
                         {t('title', project.title)}
                       </h3>
-                      <p className="text-gray-700 font-medium leading-relaxed">
-                        {t('description', project.description)}
-                      </p>
                     </div>
 
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                        <div key={tech} className={`${cardColors[techIndex % cardColors.length]} text-black px-2 py-1 text-xs font-black uppercase border-2 border-black`}>
-                          {tech}
-                        </div>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <div className="bg-gray-800 text-white px-2 py-1 text-xs font-black uppercase border-2 border-black">
-                          +{project.technologies.length - 4}
-                        </div>
-                      )}
+                    {/* Tecnologías */}
+                    <div className=' min-h-[15vh]'>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                          <div
+                            key={tech}
+                            className={`${cardColors[techIndex % cardColors.length]} text-black px-2 py-1 text-xs font-black uppercase border-2 border-black`}
+                          >
+                            {tech}
+                          </div>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <div className="bg-gray-800 text-white px-2 py-1 text-xs font-black uppercase border-2 border-black">
+                            +{project.technologies.length - 4}
+                          </div>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Action Button */}
-                    <Button
-                      onClick={() => navigateToProject(project)}
-                      className="w-full bg-black hover:bg-red-500 text-white font-black uppercase py-3 border-4 border-black hover:border-red-500 transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                    >
-                      {t('projects.viewProject')}
-                      <ArrowUpRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    {/* Botón abajo */}
+                    <div className="mt-auto">
+                      <Button
+                        onClick={() => navigateToProject(project)}
+                        className="w-full bg-black hover:bg-red-500 text-white font-black uppercase py-3 border-4 border-black hover:border-red-500 transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                      >
+                        {t('projects.viewProject')}
+                        <ArrowUpRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </div>
                   </div>
+
                 </article>
               </div>
             );

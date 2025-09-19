@@ -904,6 +904,10 @@
     height: 1px;
   }
 
+  .min-h-\[15vh\] {
+    min-height: 15vh;
+  }
+
   .min-h-\[70vh\] {
     min-height: 70vh;
   }
