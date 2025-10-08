@@ -40,7 +40,7 @@ export function Hero() {
           style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
 
         {/* Main Content */}
-        <div className="relative z-10 grid lg:grid-cols-2 gap-16 min-h-[70vh]">
+        <div className="relative z-10 grid lg:grid-cols-2 gap-16 mb-16">
           {/* Left Column - Text */}
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}>
